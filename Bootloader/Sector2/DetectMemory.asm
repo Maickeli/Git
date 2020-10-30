@@ -6,11 +6,11 @@ DetectMemory:
     mov ax, 0
     mov es, ax
     mov di, 0x5000
-    mov edx, 0x534D4150
+    mov edx, 0x534d4150
     xor ebx, ebx
 
     .repeat:
-        mov eax, 0xE820
+        mov eax, 0xe820
         mov ecx, 24
         int 0x15
 

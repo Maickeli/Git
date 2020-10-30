@@ -14,6 +14,7 @@ x86_64-elf-gcc -Ttext 0x8000 -ffreestanding -mno-red-zone -m64 -c "Kernel/Keyboa
 
 x86_64-elf-gcc -Ttext 0x8000 -ffreestanding -mno-red-zone -m64 -c "Kernel/MemoryMap.cpp" -o "MemoryMap.o"
 
+
 custom-ld -T"link.ld"
 
 copy /b bootloader.bin+kernel.bin boot.flp
@@ -27,5 +28,6 @@ DEL Kernel.bin
 DEL IDT.o
 DEL MemoryMap.o
 DEL KeyboardHandler.o
+
 
 pause
