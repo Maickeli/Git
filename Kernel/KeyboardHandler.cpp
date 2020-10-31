@@ -2,6 +2,7 @@
 
 bool LShiftOn;
 bool CapsLockOn;
+bool EnterPressed;
 
 uint_8 lastPress;
 
@@ -42,7 +43,8 @@ void MainKeyboardHandler(uint_8 scanCode, uint_8 chr)
             break;
 
         case 0x1C:      // Enter released
-            PrintString("\n\r");
+            EnterPressed = true;
+            //PrintString("\n\r");
             break;
     }
     lastPress = scanCode;

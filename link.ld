@@ -11,6 +11,7 @@ INPUT
     IDT.o
     KeyboardHandler.o
     MemoryMap.o
+    Terminal.o
 )
 
 OUTPUT

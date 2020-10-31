@@ -86,8 +86,7 @@ void PrintString(const char* string)
 
             default:
                 *(VGA_MEMORY + index * 2) = *chrPtr;
-
-            index++;
+                index++;
         }
         chrPtr++;
     }

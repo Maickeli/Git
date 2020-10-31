@@ -37,19 +37,21 @@ bool MemoryRegionsGot = false;
 
 MemoryMapEntry** GetUsableMemoryRegions()
 {
-    if(MemoryRegionsGot)
+    /*if(MemoryRegionsGot)
     {
         return UsableMemoryRegions;
-    }
+    }*/
+    UsableMemoryRegionCount = 0;
+    //PrintString(IntegerToString(UsableMemoryRegionCount));
 
-    uint_8 UsableRegionIndex;
+    MemoryMapEntry* memMap = (MemoryMapEntry*)0x5000;
+
+    uint_8 UsableRegionIndex = 0;
     for(uint_8 i = 0; i < MemoryRegionCount; i++)
     {
-        MemoryMapEntry* memMap = (MemoryMapEntry*)0x5000;
-        memMap += i;
-        if(memMap->RegionType == 1)
+        if(memMap[i].RegionType == 1)
         {
-            UsableMemoryRegions[UsableRegionIndex] = memMap;
+            UsableMemoryRegions[UsableRegionIndex] = &memMap[i];
             UsableRegionIndex++;
         }
     }
@@ -62,10 +64,13 @@ MemoryMapEntry** GetUsableMemoryRegions()
 void PrintUsableMemMaps(MemoryMapEntry** usableMemoryMaps)
 {    
     //PrintString(IntegerToString(UsableMemoryRegionCount));
+    //PrintString(IntegerToString(MemoryRegionCount));
 
     for(uint_64 i = 0; i < UsableMemoryRegionCount; i++)
     {
-        MemoryMapEntry* memMap = usableMemoryMaps[0];
-        PrintMemoryMap(memMap, CursorPos);                    // Trying to access memMap->"Anything" Crashes Virtualbox | Virtualbox usable memoryregioncount = 144 bochs = 2
+        PrintMemoryMap(usableMemoryMaps[i], CursorPos);
+
+        //MemoryMapEntry* memMap = usableMemoryMaps[0];
+        //PrintMemoryMap(memMap, CursorPos);                    // Trying to access memMap->"Anything" Crashes Virtualbox | Virtualbox usable memoryregioncount = 144 bochs = 2
     }
 }
