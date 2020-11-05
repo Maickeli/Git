@@ -167,3 +167,52 @@ const char* IntegerToString(char value) { return IntegerToString<char>(value); }
 const char* IntegerToString(short value) { return IntegerToString<short>(value); }
 const char* IntegerToString(int value) { return IntegerToString<int>(value); }
 const char* IntegerToString(long long value) { return IntegerToString<long long>(value); }
+
+
+char floatToStringOutput[128];
+const char* FloatToString(float value, uint_8 decimalPlaces)
+{
+    char* intPtr = (char*)IntegerToString((int)value);
+    char* floatPtr = floatToStringOutput;
+
+    if(value < 0)
+    {
+        value *= -1;
+    }
+
+    while(*intPtr != 0)
+    {
+        *floatPtr = *intPtr;
+        intPtr++;
+        floatPtr++;
+    }
+    *floatPtr = '.';
+    floatPtr++;
+    
+    float newValue = value - (int)value;
+
+    for (uint_8 i = 0; i < decimalPlaces + 1; i++)
+    {
+        if(i < decimalPlaces)
+        {
+            newValue *= 10;
+            *floatPtr = (int)newValue + 48;
+            newValue -= (int)newValue;
+            floatPtr++;  
+        }
+        if(i == decimalPlaces)
+        {
+            newValue *= 10;
+            if((int)newValue >= 5)
+            {
+                floatPtr -= 1;
+                *floatPtr += 1;
+                floatPtr += 1; 
+            }
+        }
+    }
+
+    *floatPtr = 0;
+
+    return floatToStringOutput;
+}

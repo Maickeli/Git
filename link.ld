@@ -12,6 +12,9 @@ INPUT
     KeyboardHandler.o
     MemoryMap.o
     Terminal.o
+    Binaries.o
+    Heap.o
+    DetectStorage.o
 )
 
 OUTPUT
@@ -42,6 +45,7 @@ SECTIONS
     .rodata : ALIGN(0x1000)
     {
         *(.rodata)
+        *(.rdata*)
     }
 
     .bss : ALIGN(0x1000)

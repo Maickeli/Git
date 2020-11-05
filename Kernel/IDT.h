@@ -2,8 +2,8 @@
 #include "Typedefs.h"
 #include "IO.h"
 #include "PrintText.h"
-#include "KeyboardHandler.h"
-#include "KBSets/KBScanCodeSet1.h"
+#include "Devices/KeyboardHandler.h"
+#include "Devices/KBSets/KBScanCodeSet1.h"
 
 struct IDT64{
     uint_16 offset_low;
