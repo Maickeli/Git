@@ -1,5 +1,5 @@
 # MiOS
-Project to try things and learn about low level programming.
+My project to try things and learn about low level programming.
 
 ### Compiling
 To compile I use nasm, gcc and dd on Windows. 
