@@ -10,7 +10,7 @@ To compile I use nasm, gcc and dd on Windows.
   - Memory Info - print info about memory
   - Floppy Drives - print floppy drives mounted
   
-### Goals
+### ToDo:
  - [x] Print text
  - [x] Keyboard support
  - [ ] Memory Management
