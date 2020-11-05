@@ -7,3 +7,9 @@ To compile I use nasm, gcc and dd on Windows.
   - Home - get back to start
   - Memory Info - print info about memory
   - Floppy Drives - print floppy drives mounted
+  
+### Goals
+ - [x] Print text
+ - [ ] Memory Management
+ - [ ] C Standard Library
+ - [ ] Mouse support
