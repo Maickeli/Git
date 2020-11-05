@@ -12,6 +12,7 @@ To compile I use nasm, gcc and dd on Windows.
   
 ### Goals
  - [x] Print text
+ - [x] Keyboard support
  - [ ] Memory Management
  - [ ] C Standard Library
  - [ ] Mouse support
