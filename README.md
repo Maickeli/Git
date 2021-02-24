@@ -2,17 +2,18 @@
 My project to try things and learn about low level programming.
 
 ### Compiling
-To compile I use nasm, gcc and dd on Windows. 
+Nasm, gcc and Makefile
 
 ### Features
-  - Help - print all commands
-  - Home - get back to start
-  - Memory Info - print info about memory
-  - Floppy Drives - print floppy drives mounted
+  - Basic memory management functions
+  - Get info of floppydrives
+  - RTC time and date
+  - PIT and PC speaker driver
+  - Keyboard driver
   
 ### To Do:
  - [x] Print text
  - [x] Keyboard support
  - [ ] Memory Management
  - [ ] C Standard Library
- - [ ] Mouse support
+ - [x] Timer
