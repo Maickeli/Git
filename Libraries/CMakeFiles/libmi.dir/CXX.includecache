@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/albert/MiOS/Libraries/libmi/string/memcmp.cpp
+string.h
+-
+
+Libraries/libmi/string.h
+stddef.h
+-
+

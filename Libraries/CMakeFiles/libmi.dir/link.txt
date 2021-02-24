@@ -1,0 +1,2 @@
+/usr/bin/ar qc liblibmi.a  CMakeFiles/libmi.dir/libmi/string/memcmp.cpp.o
+/usr/bin/ranlib liblibmi.a
